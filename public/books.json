@@ -1,0 +1,80 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "image": "/img1.png",
+        "review": "A gripping psychological thriller that keeps you guessing until the very end. It's a rollercoaster of emotions with unexpected twists that will leave you breathless.",
+        "totalPages": 336,
+        "rating": 4.5,
+        "category": "Mystery",
+        "tags": ["Suspense", "Psychological"],
+        "publisher": "Celadon Books",
+        "yearOfPublishing": 2019
+    },
+    {
+        "bookId": 2,
+        "bookName": "Educated",
+        "author": "Tara Westover",
+        "image": "/img2.png",
+        "review": "A remarkable memoir about resilience and the power of education. It's an inspiring journey of self-discovery and overcoming adversity that will stay with you long after you finish reading.",
+        "totalPages": 352,
+        "rating": 4.7,
+        "category": "Memoir",
+        "tags": ["Autobiography", "Education"],
+        "publisher": "Random House",
+        "yearOfPublishing": 2018
+    },
+    {
+        "bookId": 3,
+        "bookName": "The Night Circus",
+        "author": "Erin Morgenstern",
+        "image": "/img3.png",
+        "review": "A magical and enchanting tale that will transport you to a world of wonder. It's beautifully written with vivid imagery and captivating characters that ignite the imagination.",
+        "totalPages": 400,
+        "rating": 4.4,
+        "category": "Fantasy",
+        "tags": ["Magic", "Romance"],
+        "publisher": "Doubleday",
+        "yearOfPublishing": 2011
+    },
+    {
+        "bookId": 4,
+        "bookName": "The Alchemist",
+        "author": "Paulo Coelho",
+        "image": "/img4.png",
+        "review": "A timeless story about following your dreams and discovering your destiny. It's a philosophical journey filled with profound insights and universal truths that resonate with readers of all ages.",
+        "totalPages": 208,
+        "rating": 4.2,
+        "category": "Fiction",
+        "tags": ["Adventure", "Philosophy"],
+        "publisher": "HarperCollins",
+        "yearOfPublishing": 1988
+    },
+    {
+        "bookId": 5,
+        "bookName": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "image": "/img5.png",
+        "review": "A poignant exploration of justice, morality, and racial inequality. It's a literary masterpiece that delves deep into the human condition and leaves a lasting impact on its readers.",
+        "totalPages": 281,
+        "rating": 4.8,
+        "category": "Classic",
+        "tags": ["Social Issues", "Legal Drama"],
+        "publisher": "J. B. Lippincott & Co.",
+        "yearOfPublishing": 1960
+    },
+    {
+        "bookId": 6,
+        "bookName": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "image": "/img6.png",
+        "review": "A thrilling dystopian adventure that captivates from start to finish. It's a gripping tale of survival and rebellion in a harsh dystopian world that will leave you on the edge of your seat.",
+        "totalPages": 374,
+        "rating": 4.6,
+        "category": "Young Adult",
+        "tags": ["Dystopia", "Action"],
+        "publisher": "Scholastic Corporation",
+        "yearOfPublishing": 2008
+    }
+]
