@@ -9,7 +9,6 @@ const notify = (msg) => toast.success(msg);
 
 export const ListContext = createContext();
 
-
 function ListedBooks() {
   const AllBooks = useLoaderData();
   let [readBookIds,setReadBookIds] = useState([]); 
@@ -39,8 +38,9 @@ function ListedBooks() {
         </div>
 
         {
-          tab == 1 && readBooks.length > 0 &&
-          <div className='text-center'>
+          tab == 1 && readBooks.length > 0 && 
+
+            <div className='text-center'>
             <details className="dropdown w-full text-center">
               <summary className="m-1 btn "><p className='flex gap-2 items-center'>Sort By <img src="/All assets/arrow-down.svg" width={20} alt="" /></p> </summary>
               <ul className=" w-full  p-2  menu dropdown-content z-[1] bg-base-100 rounded-box">
@@ -53,10 +53,10 @@ function ListedBooks() {
         }
 
         {
-          tab == 2 && wishlistBooks.length > 0 &&
+          tab == 2 && wishlistBooks.length > 0 && 
           <div className='text-center'>
             <details className="dropdown w-full text-center">
-            <summary className="m-1 btn">Sort by</summary>
+              <summary className="m-1 btn "><p className='flex gap-2 items-center'>Sort By <img src="/All assets/arrow-down.svg" width={20} alt="" /></p> </summary>
               <ul className=" w-full  p-2  menu dropdown-content z-[1] bg-base-100 rounded-box">
                 <li className='rounded-full p-2  hover:text-green-500 font-bold'><button onClick={()=>{setSortingAttribute('rating');notify('Sorted according to rating')}}>Rating</button></li>
                 <li className='rounded-full p-2  hover:text-green-500 font-bold'><button onClick={()=>{setSortingAttribute('page'); notify('Sorted according to pages')}}>Number of pages</button></li>

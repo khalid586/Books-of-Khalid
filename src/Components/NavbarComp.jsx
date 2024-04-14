@@ -5,6 +5,7 @@ import { Button, Navbar } from 'flowbite-react';
 
 
 function NavbarComp() {
+  const style = 'rounded-2xl px-4 py-2';
   return (
     <Navbar className='font-custom font-bold'>
       <NavLink to = "/" className='flex'>
@@ -12,7 +13,7 @@ function NavbarComp() {
         <span className="pl-2 self-center whitespace-nowrap text-xl font-semibold dark:text-white">Books of Khalid</span>
       </NavLink>
       <div className="flex md:order-2">
-        <NavLink to = '/developer'  className={({isActive})=>isActive?' rounded-full p-2 bg-emerald-400 ':' p-2'}><img width={20} src="/All assets/code.svg" alt="" /></NavLink>
+        <NavLink to = '/login'  className={({isActive})=>isActive?`rounded-full p-2 border-4 ${style} border-emerald-400 `:`${style} p-2`}>login</NavLink>
 
       </div>
       <Navbar className='md:w-2/3'>

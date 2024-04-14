@@ -10,6 +10,8 @@ import ReadlingList from '../Components/ReadlingList';
 import Wishlist from '../Components/Wishlist';
 import PagesToRead from '../Pages/PagesToRead';
 import WishlistPage from '../Pages/WishlistPage';
+import LoginPage from '../Pages/LoginPage';
+import RegisterPage from '../Pages/RegisterPage';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
         path:'/wishlist',
         element:<WishlistPage></WishlistPage>,
         loader:() => fetch('/books.json'),
+      },
+      {
+        path:'/login',
+        element:<LoginPage></LoginPage>
+      },
+      {
+        path:'/register',
+        element:<RegisterPage></RegisterPage>
       },
       {
         path:'/book/:id',

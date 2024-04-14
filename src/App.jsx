@@ -3,6 +3,7 @@ import { Outlet, useLoaderData } from 'react-router-dom';
 import NavbarComp from './Components/NavbarComp';
 import readinglistHandler from './Handlers/readinglistHandler';
 import wishlistHandler from './Handlers/wishlistHandler';
+import Footer from './Components/Footer';
 
 export const BookContext = createContext();
 
@@ -16,6 +17,7 @@ function App() {
                 <NavbarComp></NavbarComp>
                 <Outlet />
           </BookContext.Provider>
+                <Footer></Footer>
       </div>
   );
 }
