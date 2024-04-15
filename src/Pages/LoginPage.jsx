@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProvider';
 
 function LoginPage() {
     const {signIn} = useContext(AuthContext);
-    const [redirect,setRedirect] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    console.log(location);
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -12,8 +15,11 @@ function LoginPage() {
         const password = e.target.password.value;
 
         signIn(email,password)
-            .then(()=>setRedirect(true))
-            .catch(error => console.error(error))
+            .then(()=>{
+                alert('login successful');
+                navigate(location?.state?location.state:'/')
+            })
+            .catch(error => alert(error))
     }
 
 
@@ -39,12 +45,10 @@ function LoginPage() {
                     <label for="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                 </div> */}
 
-                <p className='my-4 font-semibold text-gray-400'>Don't have an account? <Link className='text-black underline' to = '/register'>Register</Link></p>
+                <p className='my-4 font-semibold text-gray-400'>Don't have an account? <Link state={location.state} className='text-black underline' to = '/register'>Register</Link></p>
                 <button type="submit" className="text-white bg-green-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
             
             </form>
-
-            {redirect && <Navigate to = '/'></Navigate>}
         </>
     )
 }

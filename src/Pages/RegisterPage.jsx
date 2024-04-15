@@ -1,11 +1,13 @@
 
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProvider';
 
 
 function RegisterPage() {
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     function handleRegistration(e){
         e.preventDefault();
@@ -13,8 +15,8 @@ function RegisterPage() {
         const password = e.target.password.value;
 
         createUser(email,password)
-            .then(result => console.log(result.user,result.user.email))
-            .catch(error => console.error(error))
+            .then(result => {alert('registration successful');navigate(location?.state?location.state:'/')})
+            .catch(error => alert(error))
     }
     return (
         <>
@@ -40,7 +42,7 @@ function RegisterPage() {
                     <label for="remember" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                 </div> */}
 
-                <p className='my-4 font-semibold text-gray-400'>Already have an account? <Link className='text-black underline' to = '/login'>Login</Link></p>
+                <p className='my-4 font-semibold text-gray-400'>Already have an account? <Link state={location.state} className='text-black underline' to = '/login'>Login</Link></p>
                 <button type="submit" className="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
             
             </form>
