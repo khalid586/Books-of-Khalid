@@ -18,7 +18,7 @@ function NavbarComp() {
       </NavLink>
       <div className="flex md:order-2">
         {
-          user ? <button className='px-4 py-2 btn2 text-white rounded-3xl' onClick={logOut}>Logout</button>:
+          user ? <button className='px-4 py-2 btn2 hover:bg-red-700 text-white rounded-3xl' onClick={logOut}>Logout</button>:
           <NavLink to = '/login'  className={({isActive})=>isActive?`px-4 py-2 rounded-3xl bg-green-400 text-white `:`${style} `}>login</NavLink>
         }
 
