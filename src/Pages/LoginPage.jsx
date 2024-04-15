@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProvider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../firebase/firebase.config';
 
 function LoginPage() {
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-
-    console.log(location);
 
     const handleLogin = e =>{
         e.preventDefault();
@@ -22,8 +22,16 @@ function LoginPage() {
             .catch(error => alert(error))
     }
 
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
 
-
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth,provider)
+            .then(()=>{
+                navigate(location?.state?location.state:'/')
+            })
+            .catch(error => alert(error.message))
+    }
 
     return (
         <>
@@ -49,6 +57,9 @@ function LoginPage() {
                 <button type="submit" className="text-white bg-green-400 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
             
             </form>
+            <div className='text-center my-16 '>
+                <button className='rounded-xl bg-blue-700 hover:bg-blue-500 px-4 py-2 font-semibold text-white' onClick={handleGoogleSignIn}>Login with google</button>
+            </div>
         </>
     )
 }
