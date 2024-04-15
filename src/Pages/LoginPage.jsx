@@ -1,15 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, Navigate } from 'react-router-dom'
+import { AuthContext } from '../Providers/AuthProvider';
 
 function LoginPage() {
+    const {signIn} = useContext(AuthContext);
+    const [redirect,setRedirect] = useState(false);
 
     const handleLogin = e =>{
         e.preventDefault();
-        console.log(e.target.email.value)
-        console.log(e.target.password.value)
-        e.target.email.value = '';
-        e.target.password.value = '';
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        signIn(email,password)
+            .then(()=>setRedirect(true))
+            .catch(error => console.error(error))
     }
+
+
+
 
     return (
         <>
@@ -36,6 +44,7 @@ function LoginPage() {
             
             </form>
 
+            {redirect && <Navigate to = '/'></Navigate>}
         </>
     )
 }

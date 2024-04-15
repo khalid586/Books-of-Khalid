@@ -12,6 +12,8 @@ import PagesToRead from '../Pages/PagesToRead';
 import WishlistPage from '../Pages/WishlistPage';
 import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
+import ProfilePage from '../Pages/ProfilePage';
+import PrivateRoutes from './PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +47,10 @@ const router = createBrowserRouter([
         loader:() => fetch('/books.json'),
       },
       {
+        path:'/profile',
+        element:<ProfilePage></ProfilePage>
+      },
+      {
         path:'/history',
         element:<HistoryPage></HistoryPage>,
         loader:() => fetch('/books.json'),
@@ -69,7 +75,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/book/:id',
-        element:<Book></Book>,
+        element:<PrivateRoutes><Book></Book></PrivateRoutes>,
         loader:() => fetch('/books.json'),
       },
     ]
