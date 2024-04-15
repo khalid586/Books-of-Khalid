@@ -13,10 +13,10 @@ function App() {
 
   return (
       <div className='font-custom'>
-          <BookContext.Provider value={{readinglistHandler,wishlistHandler,readingList,setReadinList,wishList,setWishList}}>
-                <NavbarComp></NavbarComp>
-                <Outlet />
-          </BookContext.Provider>
+                <BookContext.Provider value={{readinglistHandler,wishlistHandler,readingList,setReadinList,wishList,setWishList}}>
+                      <NavbarComp></NavbarComp>
+                      <Outlet />
+                </BookContext.Provider>
                 <Footer></Footer>
       </div>
   );
