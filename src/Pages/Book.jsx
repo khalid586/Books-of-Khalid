@@ -37,11 +37,13 @@ function BookItem({book}){
                     <p className="mb-1 flex gap-2 font-bold text-violet-500 dark:text-gray-400"><img width = {20} src="/All assets/font-awesome-regular.svg" alt="" /> {category}</p>
                     <p className="my-1 flex items-start justify-center gap-2 font-bold text-gray-500 dark:text-gray-400"><img width = {20} src="/All assets/message-regular.svg" alt="" /> <span className='text-left'>{review}</span></p>
                  </div>
-                 <p className='flex items-center gap-4'>
-                  <p className='font-bold text-lg flex gap-4'><img src="/All assets/tags-solid.svg" width={20} alt="" /></p>
+                 <p className='flex items-center gap-2'>
+                  <p className='font-bold text-lg flex gap-1'><img src="/All assets/tags-solid.svg" width={20} alt="" /></p>
+                  <div className='flex gap-1'>                  
                   {
-                    tags.map(tagName => <p className='p-2 bg-green-100 text-green-500 font-bold rounded-xl text-xs'> {tagName}</p>)
+                    tags.map(tagName => <p className='px-3 py-1 bg-green-400 text-white font-semibold rounded-full text-xs'> {tagName}</p>)
                   }
+                  </div>
                 </p>
                 <div className='flex flex-col justify-start items-start my-2 font-bold text-gray-500 gap-1'>    
                     <p className='flex gap-2'><img src="/All assets/file-lines-regular.svg"       width={20} alt="" />Number of Pages: <span className='text-black'>{totalPages}</span></p>

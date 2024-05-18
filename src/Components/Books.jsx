@@ -12,9 +12,9 @@ export function Book({Book}){
         <p className='w-full h-[200px] lg:h-[300px]  flex justify-center'>
           <img class="rounded-t-lg " src={image} alt="" />
         </p>
-        <p className='flex pl-3'>
+        <p className='flex pl-2'>
          {
-           tags.map(tagName => <p className='m-2 p-2 bg-green-100 text-green-500 font-bold rounded-xl text-xs'> {tagName}</p>)
+           tags.map(tagName => <p className='m-1 py-1 px-2 bg-green-400 text-white font-semibold rounded-xl text-xs'> {tagName}</p>)
          }
         </p>
 
@@ -23,8 +23,8 @@ export function Book({Book}){
             <p class="text-red-600 mb-4 font-bold flex gap-2"><img width = {20} src="/All assets/pen-to-square-regular.svg" alt="" /> {author}</p>
            
             <div className='mt-6 font-bold flex justify-between'>
-                <p className="mb-1 flex gap-2 items-center font-bold p-2 px-4 rounded-full bg-violet-200 text-violet-500"><img width = {20} src="/All assets/font-awesome-regular.svg" alt="" /> {category}</p>
-                <p className=' flex gap-2 items-center'><img src="/All assets/star-regular.svg"  width={20}/><span className='text-blue-500'>{rating}</span></p>
+                <p className="text-xs mb-1 flex gap-1 items-center font-bold py-2 px-4 rounded-full bg-violet-200 text-violet-500"><img width = {10} src="/All assets/font-awesome-regular.svg" alt="" /> {category}</p>
+                <p className=' flex gap-1 items-center'><span className='text-blue-500'>{rating}</span><img src="/All assets/star-regular.svg"  width={15}/></p>
             </div>
         </div>
     </Link>
